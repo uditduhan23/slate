@@ -74,8 +74,15 @@ html, body {
   // This is the logo at the top of the ToC
   .logo {
     display: block;
-    max-width: 100%;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: $logo-margin;
+  }
+
+  .logo-content{
+    display: block;
+    text-align: center;
   }
 
   &>.search {
@@ -226,7 +233,7 @@ html, body {
   top: 0;
   left: 0;
   z-index: 100;
-  color: #000;
+  color: #e1e2e2;
   text-decoration: none;
   font-weight: bold;
   opacity: 0.7;
@@ -264,6 +271,8 @@ html, body {
   .dark-box {
     width: $examples-width;
     background-color: $examples-bg;
+    // height: $example-height;
+    overflow: auto;
     position: absolute;
     right: 0;
     top: 0;
@@ -352,9 +361,9 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    border-top: 1px solid #3E4446;
+    border-bottom: 1px solid #3E4446;
+    background-color: #191B1C;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -367,10 +376,10 @@ html, body {
     font-size: 19px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #3E4446;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
+    // background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
   }
 
   // h2s right after h1s should bump right up
@@ -399,7 +408,10 @@ html, body {
 
   table {
     margin-bottom: 1em;
+    // width: 48%;
+    max-height: 700px;
     overflow: auto;
+    // border-bottom: 1px solid #3E4446;
     th,td {
       text-align: left;
       vertical-align: top;
@@ -411,24 +423,25 @@ html, body {
 
     th {
       padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #3E4446;
       vertical-align: bottom;
     }
 
     td {
       padding: 10px;
+      // border-bottom: 1px solid #3E4446;
     }
 
     tr:last-child {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #3E4446;
     }
 
     tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
+      background-color: lighten(#181A1B,4.2%);
     }
 
     tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
+      background-color: lighten(#181A1B,2.4%);
     }
   }
 
@@ -450,7 +463,8 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    // background-color: rgba(0,0,0,0.05);
+    background-color: $code-bg;
     padding: 3px;
     border-radius: 3px;
     @extend %break-words;
@@ -553,6 +567,10 @@ html, body {
       color: #eee;
     }
   }
+}
+
+pre.highlight.json.tab-json {
+  height: 400px;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
